@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block title %}Assessment Results - Personalized Education Platform{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header bg-success text-white text-center">
+                    <h4><i class="fas fa-chart-line"></i> Your Results</h4>
+                </div>
+                <div class="card-body text-center">
+                    <div class="mb-3">
+                        <h2 class="text-success">{{ quiz_result.percentage }}%</h2>
+                        <p class="text-muted">Score: {{ quiz_result.score }}/{{ quiz_result.total }}</p>
+                    </div>
+                    <div class="mb-3">
+                        <h4 class="badge bg-{% if quiz_result.level == 'Advanced' %}success{% elif quiz_result.level == 'Intermediate' %}warning{% else %}info{% endif %} fs-6">
+                            {{ quiz_result.level }} Level
+                        </h4>
+                    </div>
+                    <div class="progress mb-3">
+                        <div class="progress-bar bg-success" style="width: {{ quiz_result.percentage }}%"></div>
+                    </div>
+                    <p class="text-muted">Great job! Based on your assessment, we've customized your learning path.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h4><i class="fas fa-lightbulb"></i> Recommended Courses</h4>
+                </div>
+                <div class="card-body">
+                    {%for course in recommended_courses %}
+                    {% set i = loop.index0 %}
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h6 class="card-title">{{ course.title }}</h6>
+                            <p class="card-text text-muted">{{ course.instructor }} • {{ course.duration }}</p>
+                            <p class="small">{{ course.modules|length }} modules</p>
+                            <a href="{{ url_for('add_course', course_index=i) }}" class="btn btn-sm btn-outline-primary">
+                                <i class="fas fa-plus"></i> Add to Learning Path
+                            </a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center mt-4">
+        <a href="{{ url_for('dashboard') }}" class="btn btn-primary btn-lg">
+            <i class="fas fa-tachometer-alt"></i> Go to Dashboard
+        </a>
+    </div>
+</div>
+{% endblock %}

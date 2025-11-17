@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block title %}{{ course.title }} - Personalized Education Platform{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h4><i class="fas fa-play-circle"></i> {{ course.title }}</h4>
+                    <p class="mb-0">by {{ course.instructor }} • {{ course.duration }}</p>
+                </div>
+                <div class="card-body">
+                    <div class="mb-4">
+                        <div class="progress">
+                            <div class="progress-bar bg-success" style="width: {{ course.completion_percentage }}%"></div>
+                        </div>
+                        <small class="text-muted">{{ course.completion_percentage }}% Complete</small>
+                    </div>
+
+                    <div class="ratio ratio-16x9 mb-4">
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+                    </div>
+
+                    <div class="text-center">
+                        {% if course.completed %}
+                            <div class="alert alert-success">
+                                <i class="fas fa-trophy"></i> Congratulations! You completed this course!
+                                <a href="{{ url_for('certificates') }}" class="btn btn-success btn-sm ms-2">
+                                    View Certificate
+                                </a>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    <h5><i class="fas fa-list"></i> Course Modules</h5>
+                </div>
+                <div class="card-body">
+                    {% for module in course.modules %}
+                    {% set i = loop.index0 %}
+                    <div class="module-item {% if course.progress.get(module) %}completed{% endif %}">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <strong>{{ loop.index }}. {{ module }}</strong>
+                                {% if course.progress.get(module) %}
+                                    <i class="fas fa-check-circle text-success ms-2"></i>
+                                {% endif %}
+                            </div>
+                            <a href="{{ url_for('update_progress', course_index=course_index, module_index=i) }}"
+                               class="btn btn-sm {% if course.progress.get(module) %}btn-success{% else %}btn-outline-primary{% endif %}">
+                                {% if course.progress.get(module) %}
+                                    <i class="fas fa-undo"></i>
+                                {% else %}
+                                    <i class="fas fa-check"></i>
+                                {% endif %}
+                            </a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
