@@ -1,0 +1,106 @@
+/* ProgressPage.module.css */
+.page { padding: 2rem 1.5rem; background: var(--color-bg); }
+.container { max-width: 800px; margin: 0 auto; }
+.center { text-align: center; padding: 4rem; color: var(--color-text-muted); }
+
+.title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 1.75rem;
+}
+
+.overview {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.overviewCard {
+  background: var(--color-primary);
+  color: #fff;
+  border-radius: 0.75rem;
+  padding: 1.5rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  box-shadow: var(--shadow);
+}
+
+.bigNum {
+  font-size: 2.2rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.bigLabel {
+  font-size: 0.82rem;
+  opacity: 0.85;
+}
+
+.section {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+.sectionTitle {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+}
+
+.courseList { display: flex; flex-direction: column; gap: 1.25rem; }
+
+.courseRow { display: flex; flex-direction: column; gap: 0.4rem; }
+
+.courseInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.courseLink {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-text);
+  text-decoration: none;
+}
+.courseLink:hover { color: var(--color-primary); text-decoration: underline; }
+
+.badge {
+  font-size: 0.72rem;
+  background: #dcfce7;
+  color: var(--color-success);
+  border-radius: 2rem;
+  padding: 0.15rem 0.55rem;
+  font-weight: 600;
+}
+
+.barRow { display: flex; align-items: center; gap: 0.75rem; }
+
+.bar {
+  flex: 1;
+  height: 8px;
+  background: var(--color-border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.barFill {
+  height: 100%;
+  background: var(--color-primary);
+  border-radius: 4px;
+  transition: width 0.4s;
+}
+
+.barLabel {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  width: 38px;
+  text-align: right;
+}
+
+.empty { color: var(--color-text-muted); font-size: 0.9rem; text-align: center; padding: 2rem 0; }
