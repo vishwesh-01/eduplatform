@@ -1,0 +1,141 @@
+/* AssessmentPage.module.css */
+.page {
+  min-height: calc(100vh - 64px);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 3rem 1rem;
+  background: var(--color-bg);
+}
+
+.center {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: var(--color-text-muted);
+  font-size: 1.05rem;
+}
+
+.errorMsg {
+  color: var(--color-danger);
+  margin-bottom: 1rem;
+}
+
+.btnRetry {
+  padding: 0.6rem 1.5rem;
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 0.75rem;
+  padding: 2.5rem 2rem;
+  width: 100%;
+  max-width: 620px;
+  box-shadow: var(--shadow-md);
+}
+
+.progressRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.progressLabel, .difficultyLabel {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.progressBar {
+  height: 6px;
+  background: var(--color-border);
+  border-radius: 3px;
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: var(--color-primary);
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.questionText {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--color-text);
+  line-height: 1.5;
+  margin-bottom: 1.75rem;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.optionBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.85rem 1rem;
+  background: var(--color-bg);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius);
+  cursor: pointer;
+  text-align: left;
+  font-size: 0.95rem;
+  color: var(--color-text);
+  transition: border-color 0.15s, background 0.15s, box-shadow 0.15s;
+}
+.optionBtn:hover {
+  border-color: var(--color-primary);
+  background: #eff6ff;
+}
+.optionSelected {
+  border-color: var(--color-primary) !important;
+  background: #eff6ff !important;
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.12);
+}
+
+.optionLetter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--color-border);
+  font-size: 0.75rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  color: var(--color-text-muted);
+}
+.optionSelected .optionLetter {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.btnSubmit {
+  width: 100%;
+  padding: 0.8rem;
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.btnSubmit:hover:not(:disabled) { background: var(--color-primary-dark); }
+.btnSubmit:disabled { opacity: 0.5; cursor: not-allowed; }

@@ -1,0 +1,70 @@
+/* CertificatesPage.module.css */
+.page { padding: 2rem 1.5rem; background: var(--color-bg); }
+.container { max-width: 900px; margin: 0 auto; }
+.center { text-align: center; padding: 4rem; color: var(--color-text-muted); }
+
+.title { font-size: 1.6rem; font-weight: 700; margin-bottom: 1.75rem; }
+
+.empty {
+  text-align: center;
+  padding: 3rem;
+  color: var(--color-text-muted);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 0.75rem;
+}
+
+.hint { margin-top: 0.5rem; font-size: 0.875rem; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+.card {
+  background: var(--color-bg-card);
+  border: 2px solid var(--color-border);
+  border-radius: 0.75rem;
+  padding: 1.75rem;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  transition: border-color 0.15s;
+}
+.card:hover { border-color: var(--color-primary); }
+
+.cardTop { display: flex; flex-direction: column; gap: 0.4rem; }
+
+.courseTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1.4;
+}
+
+.issuedDate { font-size: 0.82rem; color: var(--color-text-muted); }
+
+.certCode {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  font-family: monospace;
+  word-break: break-all;
+}
+
+.btnDownload {
+  padding: 0.65rem 1rem;
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+  width: 100%;
+}
+.btnDownload:hover:not(:disabled) { background: var(--color-primary-dark); }
+.btnDownload:disabled { opacity: 0.55; cursor: not-allowed; }

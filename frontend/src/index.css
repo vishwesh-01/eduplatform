@@ -1,0 +1,75 @@
+/* index.css — Global styles for the AI Education Platform */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-primary:      #2563eb;
+  --color-primary-dark: #1d4ed8;
+  --color-secondary:    #7c3aed;
+  --color-success:      #16a34a;
+  --color-warning:      #d97706;
+  --color-danger:       #dc2626;
+  --color-bg:           #f8fafc;
+  --color-bg-card:      #ffffff;
+  --color-text:         #1e293b;
+  --color-text-muted:   #64748b;
+  --color-border:       #e2e8f0;
+  --radius:             0.5rem;
+  --shadow:             0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06);
+  --shadow-md:          0 4px 6px rgba(0,0,0,0.07), 0 2px 4px rgba(0,0,0,0.06);
+  --font-sans:          'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono:          'JetBrains Mono', 'Fira Code', monospace;
+}
+
+html { font-size: 16px; }
+
+body {
+  font-family:      var(--font-sans);
+  background-color: var(--color-bg);
+  color:            var(--color-text);
+  line-height:      1.6;
+  min-height:       100vh;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.3;
+  font-weight: 600;
+}
+
+button { cursor: pointer; }
+
+input, select, textarea {
+  font-family: inherit;
+  font-size:   1rem;
+}
+
+/* Utility classes */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-bg); }
+::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 3px; }

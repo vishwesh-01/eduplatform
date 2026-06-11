@@ -1,0 +1,105 @@
+/* LandingPage.module.css */
+
+.page { background: var(--color-bg); }
+
+.hero {
+  background: linear-gradient(135deg, #1e40af 0%, #7c3aed 100%);
+  color: #fff;
+  padding: 5rem 1.5rem;
+  text-align: center;
+}
+
+.heroContent { max-width: 680px; margin: 0 auto; }
+
+.heroTitle {
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.03em;
+}
+
+.heroSubtitle {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  opacity: 0.88;
+  margin-bottom: 2rem;
+}
+
+.heroCta { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+.btnPrimary {
+  padding: 0.75rem 1.75rem;
+  background: #fff;
+  color: #1e40af;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: opacity 0.15s;
+}
+.btnPrimary:hover { opacity: 0.9; text-decoration: none; }
+
+.btnSecondary {
+  padding: 0.75rem 1.75rem;
+  border: 2px solid rgba(255,255,255,0.6);
+  color: #fff;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: border-color 0.15s;
+}
+.btnSecondary:hover { border-color: #fff; text-decoration: none; }
+
+.features { padding: 5rem 1.5rem; }
+.container { max-width: 1100px; margin: 0 auto; }
+
+.sectionTitle {
+  text-align: center;
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  color: var(--color-text);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 0.75rem;
+  padding: 1.75rem;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+
+.cardTitle { font-size: 1.05rem; font-weight: 600; margin-bottom: 0.5rem; }
+.cardDesc  { color: var(--color-text-muted); font-size: 0.9rem; line-height: 1.6; }
+
+.ctaBanner {
+  background: linear-gradient(135deg, #1e40af 0%, #7c3aed 100%);
+  color: #fff;
+  padding: 4rem 1.5rem;
+  text-align: center;
+}
+.ctaBanner h2 { font-size: 1.75rem; margin-bottom: 0.75rem; }
+.ctaBanner p  { opacity: 0.85; margin-bottom: 2rem; font-size: 1.05rem; }
+
+.btnWhite {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  background: #fff;
+  color: #1e40af;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: opacity 0.15s;
+}
+.btnWhite:hover { opacity: 0.9; text-decoration: none; }
